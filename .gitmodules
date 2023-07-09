@@ -1,3 +1,18 @@
 [submodule "IIC2133 - EDD/T2-2023-1-sachondo7"]
 	path = IIC2133 - EDD/T2-2023-1-sachondo7
 	url = https://github.com/IIC2133-PUC/T2-2023-1-sachondo7.git
+[submodule "IIC2133 - EDD/T3-2023-1-sachondo7"]
+	path = IIC2133 - EDD/T3-2023-1-sachondo7
+	url = https://github.com/IIC2133-PUC/T3-2023-1-sachondo7.git
+[submodule "IIC2133 - EDD/--force"]
+	path = IIC2133 - EDD/--force
+	url = https://github.com/IIC2133-PUC/T2-2023-1-sachondo7.git
+[submodule "IIC2133 - EDD/T1-2023-1-sachondo7"]
+	path = IIC2133 - EDD/T1-2023-1-sachondo7
+	url = https://github.com/IIC2133-PUC/T1-2023-1-sachondo7.git
+[submodule "IIC2133 - EDD/--name"]
+	path = IIC2133 - EDD/--name
+	url = https://github.com/IIC2133-PUC/T2-2023-1-sachondo7.git
+[submodule "IIC2133 - EDD/T0-2023-1-sachondo7"]
+	path = IIC2133 - EDD/T0-2023-1-sachondo7
+	url = https://github.com/IIC2133-PUC/T0-2023-1-sachondo7.git
