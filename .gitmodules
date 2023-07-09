@@ -22,3 +22,6 @@
 [submodule "IIC2513 - Tecnologías y Aplicaciones Web/grupo-Grupo-vcl-vsb-sas-frontend"]
 	path = IIC2513 - Tecnologías y Aplicaciones Web/grupo-Grupo-vcl-vsb-sas-frontend
 	url = https://github.com/IIC2513-2022-2/grupo-Grupo-vcl-vsb-sas-frontend.git
+[submodule "IIC2143 - Ingenieria de software/grupo-79"]
+	path = IIC2143 - Ingenieria de software/grupo-79
+	url = https://github.com/IIC2143/grupo-79.git
