@@ -16,3 +16,9 @@
 [submodule "IIC2133 - EDD/T0-2023-1-sachondo7"]
 	path = IIC2133 - EDD/T0-2023-1-sachondo7
 	url = https://github.com/IIC2133-PUC/T0-2023-1-sachondo7.git
+[submodule "IIC2513 - Tecnologías y Aplicaciones Web/grupo-Grupo-vcl-vsb-sas-backend"]
+	path = IIC2513 - Tecnologías y Aplicaciones Web/grupo-Grupo-vcl-vsb-sas-backend
+	url = https://github.com/IIC2513-2022-2/grupo-Grupo-vcl-vsb-sas-backend.git
+[submodule "IIC2513 - Tecnologías y Aplicaciones Web/grupo-Grupo-vcl-vsb-sas-frontend"]
+	path = IIC2513 - Tecnologías y Aplicaciones Web/grupo-Grupo-vcl-vsb-sas-frontend
+	url = https://github.com/IIC2513-2022-2/grupo-Grupo-vcl-vsb-sas-frontend.git
