@@ -1,0 +1,81 @@
+<h1 class="title is-3">Turnos Disponibles</h1>
+
+<%= search_form_for @q, url: publicacions_index_path  do |f|%>
+    <%= f.label :post_direccion_llegada_or_post_direccion_salida_i_cont_any, "Buscar" %>
+    <%= f.search_field :post_direccion_llegada_or_post_direccion_salida_i_cont_any %>
+
+    <%= f.submit %>
+<%end%>
+<br>
+
+<table align='center' class="table is-striped">
+    <thead>
+        <tr>
+            <th>Usuario</th>
+            <th>Direccion de salida</th>
+            <th>Direccion de llegada</th>
+            <th><%= sort_link(@q, :post_hora, "Hora del Turno", default_order: :asc)%></th>
+            <th><%= sort_link(@q, :post_day, "Dia del Turno", default_order: :asc)%></th>
+            <th>Limite de personas</th>
+            <th colspan='3'></th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @publicacions.each do |publicacion|%>
+            <tr>
+                 <% if current_user %> <%# Que si está conectado el ususario solo se vean sus publicaciones %>
+                    <% if current_user.id != publicacion.user_id %>  
+                        <th><%= publicacion.post_customer_name%></th>
+                        <th><%= publicacion.post_direccion_salida%></th>
+                        <th><%= publicacion.post_direccion_llegada%></th>
+                        <th><%= publicacion.post_hora.strftime('%H:%M')%></th>
+                        <th><%= publicacion.post_day.strftime('%A %d %b %Y')%></th>
+                        <th><%= publicacion.post_limit_personas%></th>
+                        
+                        <th><%= link_to 'Ver Detalles', publicacions_show_path(:id => publicacion.id) %></th>
+
+                        <% ya_solicitado = false %>
+                        <% @requests.each do |request|%>
+                            <% if request.requesting_name == @user.username %>
+                                <% if request.publicacion_id == publicacion.id %>
+                                    <% ya_solicitado = true %>
+                                    
+                            <%end%>
+                        <%end%>
+                        <%end%>
+                        <% if ya_solicitado==false %>
+                            <% if publicacion.full? == false %>
+                                <th><%= link_to 'Solicitar Turno', requests_new_path(:id => publicacion.id)%><th>
+                            <% else %>
+                                <th>Turno lleno</th>
+                            <%end%>
+                        <%end%>
+                    <%end%>
+                
+
+                <%else%> <%# Que si no está conectado el usuario que se vean todas nomás %>
+                    <th><%= publicacion.post_customer_name%></th>
+                    <th><%= publicacion.post_direccion_salida%></th>
+                    <th><%= publicacion.post_direccion_llegada%></th>
+                    <th><%= publicacion.post_hora.strftime('%H:%M')%></th>
+                    <th><%= publicacion.post_day.strftime('%A %d %b %Y')%></th>
+                    <th><%= publicacion.post_limit_personas%></th>
+                <%end%>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+
+
+
+<div>
+<%yield%>
+<% if current_user %>
+    <a class="button is-link is-light" href="<%= publicacions_new_path %>">Crear publicación</a>
+    <a class="button is-link is-light" href="<%= requests_index_path %>">Ver solicitudes de turno</a>
+<%end%>
+</div>
+<br>
+<div>
+<a class="button is-success is-light" href="<%= controllers_index_path %>">Volver atrás</a>
+</div>

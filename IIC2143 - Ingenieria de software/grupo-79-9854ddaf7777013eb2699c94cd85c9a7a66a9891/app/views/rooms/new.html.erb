@@ -1,0 +1,16 @@
+<h1 class="title is-3">Crear Nuevo Chat</h1>
+
+<%= form_with(model: @room, method: :post) do |form| %>
+    <div>
+        <%= form.text_field :name, value: "#{@publicacion.post_direccion_salida} --> #{@publicacion.post_direccion_llegada}", type: :hidden %>
+    </div>
+    <div>
+        <% puts 'Este es la publicacion dentro de la view', @publicacion.id %>
+        <%= form.number_field :id, value: @publicacion.id, type: :hidden %>
+    </div>
+    <div>
+        <%= form.submit 'Crear Chat'  %>
+    </div>
+<%end%>
+
+<%= link_to 'Back', publicacions_show_path(:id => @publicacion.id) %>

@@ -1,0 +1,66 @@
+<h1 class="title is-3">Solicitudes de Turnos</h1>
+
+<p class="title is-4">Solicitudes Recibidas</p>
+
+<table align='center' class="table is-striped">
+    <thead>
+        <tr>
+            <th>ID publicacion</th>
+            <th>Solicitante</th>
+            <th>Solicitado</th>
+            <th>Descripción</th>
+            <th>Estado</th>
+        </tr>
+    </thead>
+    <tbody>
+            <% @requests.each do |request|%>
+                    <% if current_user.username == request.requested_name %>
+
+                        <tr>
+                            <th><%= link_to request.publicacion_id, publicacions_show_path(:id => request.publicacion_id)%></th>
+                            <th><%= request.requesting_name%></th>
+                            <th><%= request.requested_name%></th>
+                            <th><%= request.descripcion%></th>
+                            <% if request.estado == 'pendiente'%>
+                                <th><%= request.estado%></th>
+                                <th><%= link_to 'Aceptar', requests_update_path(:id => request.id, :estado => 'Aceptado')  %></th>
+                                <th><%= link_to 'Rechazar', requests_update_path(:id => request.id, :estado => 'Rechazado') %></th>
+                            <% else %>
+                                <th><%= request.estado %></th>
+                            <% end %>
+                        </tr>
+                    <% end %>
+            <% end %>
+    </tbody>
+</table>
+
+<p class="title is-4">Solicitudes Realizadas</p>
+<table align='center' class="table is-striped">
+    <thead>
+        <tr>
+            <th>ID publicacion</th>
+            <th>Solicitante</th>
+            <th>Solicitado</th>
+            <th>Descripcion</th>
+            <th>Estado</th>
+        </tr>
+    </thead>
+    <tbody>
+            <% @requests.each do |request|%>
+                    <% if current_user.username == request.requesting_name %>
+
+                        <tr>
+                            <th><%= link_to request.publicacion_id, publicacions_show_path(:id => request.publicacion_id) %></th>
+                            <th><%= request.requesting_name%></th>
+                            <th><%= request.requested_name%></th>
+                            <th><%= request.descripcion%></th>
+                            <th><%= request.estado%></th>
+                        </tr>
+                    <% end %>
+            <% end %>
+    </tbody>
+</table>
+
+
+
+<a class="button is-success is-light" href="<%= publicacions_index_path %>">Volver atrás</a>

@@ -1,0 +1,38 @@
+<% if current_user %>
+    <h1 class="title is-1">Perfiles</h1>
+
+    <p>¡Bienvenido a todos los perfiles <u><%=@user.username%></u>! Acá podrás observar todos los perfiles que existen en DCCarpool.</p>
+
+    <table align='center' class="table is-striped">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Nombre de usuario</th>
+            <th>Email</th>
+            <th>Dirección</th>
+            <th>Teléfono</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @users.each do |users|%>
+            <tr>
+                 <% if current_user %> <%# Que si está conectado el usuario solo se vean sus publicaciones %>
+                    <% if current_user.id != users.id%>
+                        <th><% if users.profile_pic.attached?%>
+                            <%= image_tag(users.profile_pic, size: "100")%>
+                        <%else%>
+                            <%= image_tag('default_profile.png', size: "100")%>
+                        <%end%> </th>
+                        <th><%= users.username%></th>
+                        <th><%= users.email%></th>
+                        <th><%= users.address%></th>
+                        <th><%= users.phone %></th>
+                        <th><%= link_to 'Ver Perfil', profile_path(:id => users.id) %></th>
+                    <%end%>
+                <%end%>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+
+<%end%>

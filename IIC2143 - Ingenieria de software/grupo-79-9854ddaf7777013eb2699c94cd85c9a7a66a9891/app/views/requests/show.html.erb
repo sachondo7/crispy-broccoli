@@ -1,0 +1,22 @@
+<h1 class="title is-3">Solicitud</h1>
+
+<%= notice %>
+
+<table align='center'>
+    <thead>
+        <tr>
+            <th>ID de la publicacion </th>
+            <th>Solicitado por </th>
+            <th>Le solicita a </th>
+            <th>Descripcion de la solicitud</th>
+        </tr>
+    </thead>
+    <tbody>
+        <th><%= @request.publicacion_id %></th>
+        <th><%= @request.requesting_name %></th>
+        <th><%= @request.requested_name %></th>
+        <th><%= @request.descripcion %></th>
+    </tbody>
+</table>
+
+<a class="button is-success is-light" href="<%= publicacions_index_path %>">Volver atrás</a>

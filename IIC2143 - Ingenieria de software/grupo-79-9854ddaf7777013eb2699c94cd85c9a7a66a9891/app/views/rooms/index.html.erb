@@ -1,0 +1,32 @@
+<h1 class="title is-3">Mis Chats</h1>
+
+<table align='center' class="table is-striped">
+    <thead>
+        <tr>
+            <th>Nombre Del Chat</th>
+            <th>Chat</th>
+            <th colspan='3'></th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @requests.each do |request|%>
+        <tr>
+          <% if request.estado == 'Aceptado'%>
+            <% if request.requesting_name == @user.username or request.requested_name == @user.username%>
+              <% @publicacions.each do |publicacion|%>
+                <% if publicacion.id == request.publicacion_id%>
+                  <% @rooms.each do |room|%>
+                    <% if room.publicacion_id == publicacion.id%>
+                      <th><%= room.name%></th>
+                      <th><%= link_to 'Ir al Chat', rooms_show_path(:id => room.id)%></th>
+                     <%end%>               
+                  <%end%>
+                <%end%>
+              <%end%>
+            <%end%>
+          <%end%>
+        </tr>
+        <%end%>
+    </tbody>
+</table>
+

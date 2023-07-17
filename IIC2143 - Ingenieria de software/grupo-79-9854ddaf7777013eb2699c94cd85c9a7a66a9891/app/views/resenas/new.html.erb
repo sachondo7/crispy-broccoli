@@ -1,0 +1,29 @@
+<h1 class="title is-3">Crear nueva Reseña</h1>
+<%#= cambie @resena_new por @resena %>
+<%= form_with(model: @resena_new, method: :post) do |form| %>
+    <div>   
+        <%= form.label :Calificacion %>
+        <%= form.number_field :calificacion, min: 1, max: 5%>
+    </div>
+    <div>
+        <%= form.label :Descripcion %>
+        <%= form.text_field :texto %>
+    </div>
+    <div>
+        <%= form.text_field :emisor, value: @user.username, type: :hidden %>
+    </div>
+    <div>
+        <%= form.text_field :receptor, value: @user_calificado, type: :hidden %>
+    </div>
+    <div>
+        <%= form.text_field :user_id, value: @user.id, type: :hidden %>
+    </div>
+    <div>
+        <%= form.submit 'Enviar' %>
+    </div>
+    <br>
+    <div>
+    <a class="button is-success is-light" href="<%= profiles_path %>">Volver atrás</a>
+    </div>
+
+<% end %>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html class="has-background-grey-lighter">
+<style>
+ul {list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;}
+
+li {float: left;}
+
+li a {display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;}
+
+.clase {float: right}
+
+li a:hover {background-color: #111;}
+</style>
+
+  <head>
+    <title>DCCarpool - Grupo 79</title>
+
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    
+  </head>
+
+  <body align=center>
+
+  
+
+  <nav class="navbar" role="navigation" aria-label="main navigation" >
+  <div class="navbar-brand">
+    <a class="navbar-item" href="https://dcc.ing.puc.cl/">
+      <img id="logo" src="https://postgradosdcc.ing.puc.cl/hosted/images/db/2a63921bc04365b0724de5715d4807/OG-DCC.jpg" width="112" height="60">
+    </a>
+
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item" href="<%= controllers_index_path %>">
+        Home
+      </a>
+      <% if current_user %>
+        <a class="navbar-item" href="<%= profile_path(current_user.id) %>">
+          Mi Perfil
+        </a>
+
+        <a class="navbar-item" href="<%= profiles_path %>">
+          Perfiles
+        </a>
+      <%end%>
+
+      <a class="navbar-item" href="<%= publicacions_index_path %>">
+        Publicaciones
+      </a>
+      <% if current_user %>
+        <a class="navbar-item" href="<%= rooms_index_path %>">
+          Mis Chats
+        </a>
+      <%end%>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          Más
+        </a>
+
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="<%= sobre_nosotros_index_path %>">
+            Sobre nosotros
+          </a>
+          <hr class="navbar-divider">
+          <a class="navbar-item" href="<%= admin_root_path %>">
+            Ingresar como admin
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+
+        <div class="buttons">
+        <% if current_user %>
+          <%= button_to "Cerrar sesión", destroy_user_session_path,
+          :class =>"button is-primary", :method => :delete %>
+
+        <%else%>
+          <a class="button is-light" href="<%= new_user_session_path %>">
+            <strong>Iniciar Sesión</strong>
+          </a>
+          <a class="button is-primary"  href="<%=new_user_registration_path%>">
+            Registrarme
+          </a>
+          <%end%>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+  <p class="notice"><%= notice%></p>
+  <p class="alert"><%= alert%></p>
+  <%= yield %>
+    
+  </body>
+</html>

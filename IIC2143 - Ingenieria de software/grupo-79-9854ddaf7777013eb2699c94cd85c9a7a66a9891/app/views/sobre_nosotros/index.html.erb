@@ -1,0 +1,41 @@
+<html>
+<head>
+<style>
+h1 {text-align: center;}
+p {text-align: center;}
+div {text-align: center; row-gap: 20px}
+
+.column {
+  float: left;
+  width: 33.33%;
+}
+
+.mensaje {
+  font-size: 25px;
+}
+
+.mensaje2 {
+  font-size: 20px;
+}
+
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+</style>
+</head>
+
+<body>
+<br>
+<h1 class="title is-2">Sobre Nosotros</h1>
+<p class="mensaje">¡Somos 3 alumnos de la Pontificia Universidad Católica cursando el ramo de Ingenieria de Software (IIC2143) en la sección 2! </p>
+<br>
+<div class="row">
+  <div class="column"><p class="mensaje2">Diego Muñoz</p><div><%= image_tag('FotoDiego.png', size: "500")%></div></div>
+  <div class="column"><p class="mensaje2">Tomás Fouyet</p><div><%= image_tag('FotoTomas.jpeg', size: "500")%></div></div>
+  <div class="column"><p class="mensaje2">Sebastián Achondo</p><div><%= image_tag('FotoSeba.jpeg', size: "500")%></div></div>
+</div>
+</body>

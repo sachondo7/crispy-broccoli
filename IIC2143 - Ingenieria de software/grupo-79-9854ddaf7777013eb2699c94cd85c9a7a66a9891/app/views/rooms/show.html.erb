@@ -1,0 +1,39 @@
+<html>
+<head>
+<style>
+h1 {text-align: center;}
+p {text-align: center;}
+div {text-align: center; row-gap: 20px}
+
+.fondo_chat {
+  background-color: white;
+  width: 500px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: gainsboro;
+}
+.hora_chat{
+  color: grey;
+  font-size: 10px;
+}
+</style>
+</head>
+
+<h1 class="title is-3">Sala de Chat</h1>
+<h2 class="title is-3"><%= @room.name%></h2>
+
+
+<tbody>
+    <% @messages.each do |message|%>
+      <% if message.room_id == @room.id%>
+      <center>
+        <div class='fondo_chat'> <b><%= message.user.username %></b>: <%= message.content%> <p class ='hora_chat'><%= message.created_at.in_time_zone("America/Santiago").strftime("at %I:%M%p")%></p></div>
+      <%end%>
+    <%end%>
+</tbody>
+
+<%= form_tag(messages_create_path(:room_id => @room.id, :user_id => @user.id), method: "post", class:'form-inline' ) do %>
+<%= text_field_tag(:content) %>
+<%= submit_tag("Enviar", class: 'btn btn-primary')%>
+<% end %>
+<br>

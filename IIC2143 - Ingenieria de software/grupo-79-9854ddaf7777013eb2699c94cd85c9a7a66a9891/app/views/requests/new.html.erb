@@ -1,0 +1,35 @@
+<h1 class="title is-3">Solicitud de turno</h1>
+<%= form_with(model: @request, method: :post) do |form| %>
+    <div>   
+        <%#= form.label :ID_publicacion_solicitada %>
+        <%#= Esto segun yo deberiamos borrarlo %>
+        <%= form.text_field :publicacion_id, value: @request.publicacion.id, type: :hidden%>
+    </div>
+    <div>
+        <%#= form.label :Nombre_del_solicitante %>
+        <%= form.text_field :requesting_name, value: current_user.username, type: :hidden %>
+    </div>
+    <div>
+        <%#= form.label :Nombre_del_solicitado %>
+        <%= form.text_field :requested_name, value: @request.publicacion.post_customer_name, type: :hidden %>
+    </div>
+    <div>
+        <div>
+        <%= form.label :Descripción_de_la_solicitud %>
+        </div>
+        <%= form.text_field :descripcion , :size => 50 %>
+    </div>
+    <div>
+        <%#= Este es el estado %>
+        <%= form.text_field :estado, value: 'pendiente', type: :hidden %>
+    </div>
+    <div>
+        <%= form.submit 'Solicitar Turno' %>
+    </div>
+    <br>
+    <div>
+    <a class="button is-success is-light" href="<%= publicacions_index_path %>">Volver atrás</a>
+    </div>
+
+<% end %>
+

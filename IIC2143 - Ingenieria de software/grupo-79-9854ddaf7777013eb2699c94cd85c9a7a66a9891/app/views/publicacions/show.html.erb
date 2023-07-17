@@ -1,0 +1,121 @@
+<h1 class="title is-3">Menú de Publicación</h1>
+
+<%= notice %>
+
+<table align='center' class="table is-striped">
+    <thead>
+        <tr>
+            <th>Usuario</th>
+            <th>Direccion de salida</th>
+            <th>Direccion de llegada</th>
+            <th>Hora del turno</th>
+            <th>Fecha del turno</th>
+            <th>Limite de personas</th>
+            <th colspan='3'></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th><%= @publicacion.post_customer_name%></th>
+            <th><%= @publicacion.post_direccion_salida%></th>
+            <th><%= @publicacion.post_direccion_llegada%></th>
+            <th><%= @publicacion.post_hora.strftime('%H:%M')%></th>
+            <th><%= @publicacion.post_day.strftime('%d %b %Y')%></th>
+            <th><%= @publicacion.post_limit_personas%></th>
+        </tr>
+    </tbody>
+</table>
+
+<%yield%>
+<% if current_user%>
+    <% if current_user.id == @publicacion.user_id%>
+        <p><%= link_to 'Editar publicación', publicacions_edit_path(:id => @publicacion.id), :class => "button is-link is-light"%> 
+        <%= link_to 'Eliminar publicación', publicacions_delete_path(:id => @publicacion.id), method: :delete , :class => "button is-danger is-light"%></p>
+    <%end%>
+    <br>
+
+    <p class="title is-4">Solicitudes a este turno</p>
+    <table align='center' class="table is-striped">
+    <thead>
+        <tr>
+            <th>Solicitante</th>
+            <th>Solicitado</th>
+            <th>Descripcion</th>
+            <th>Estado</th>
+        </tr>
+    </thead>
+    <tbody>
+            <% @requests.each do |request|%>
+                    <% if request.publicacion_id == @publicacion.id %>
+                        <tr>
+                            <th><%= request.requesting_name%></th>
+                            <th><%= request.requested_name%></th>
+                            <th><%= request.descripcion%></th>
+                            <% if @publicacion.user_id == @user.id %>
+                                <th><%= request.estado%></th>
+                                <% if request.estado == 'pendiente' %>
+                                <th><%= link_to 'Aceptar', requests_update_path(:id => request.id, :estado => 'Aceptado')  %></th>
+                                <th><%= link_to 'Rechazar', requests_update_path(:id => request.id, :estado => 'Rechazado') %></th>
+                                <%end%>
+                            <% else %>
+                                <th><%= request.estado %></th>
+                            <% end %>
+                        </tr>
+                    <% end %>
+            <% end %>
+    </tbody>
+</table>
+
+<%end%>
+
+
+<p class="title is-4">Participantes de este turno: <%= "(#{@publicacion.requests.where(estado: 'Aceptado').count} / #{@publicacion.post_limit_personas})" %></p>
+<table align='center' class="table is-striped">
+    <tbody>
+        <% @requests.each do |request|%>
+            <% if request.publicacion_id == @publicacion.id %>
+                <% if request.estado == 'Aceptado' %>
+                    <tr>
+                        <th><%= request.requesting_name%></th>
+                    </tr>
+                <%end%>
+            <%end%>
+        <%end%>
+    </tbody>
+</table>
+<div>
+<% room_id = 1 %>
+        <% chat_creado = false %>
+        <% @rooms.each do |roomx|%>
+            <%if roomx.publicacion_id == @publicacion.id %>
+                <% chat_creado = true %>
+                <% room_id = roomx.id %>
+            <%end%>
+        <%end%>
+
+        <% estoy_en_turno = false %>
+        <% @requests.each do |request|%>
+            <%if request.publicacion_id == @publicacion.id %>
+                <%if request.requesting_name == current_user.username and request.estado=='Aceptado' %>
+                    <% estoy_en_turno = true %>
+                <%end%>
+            <%end%>
+        <%end%>
+
+        
+        <%if chat_creado==false and @publicacion.user_id == @user.id %>
+            <a class="button is-success is-light" href="<%= rooms_new_path(:id => @publicacion.id)%>">Crear Chat</a>
+        <%end%>
+
+        <%if chat_creado==true and @publicacion.user_id == @user.id %>
+            <a class="button is-success is-light" href="<%= rooms_show_path(:id => room_id)%>">Ir al Chat</a>
+        <%end%>
+
+        <%if chat_creado==true and estoy_en_turno==true %>
+            <a class="button is-success is-light" href="<%= rooms_show_path(:id => room_id)%>">Ir al Chat</a>
+        <%end%>
+</div>
+<br>
+<div>
+<a class="button is-success is-light" href="<%= publicacions_index_path %>">Volver atrás</a>
+</div>

@@ -1,0 +1,35 @@
+<h1 class="title is-3">Crear Publicación</h1>
+
+<%= form_with(model: @publicacion, method: :post) do |form| %>
+    <div>
+        <%= form.text_field :post_customer_name, value: @user.username, type: :hidden %>
+    </div>
+    <div>
+        <%= form.label :Direccion_de_salida %>
+        <%= form.text_field :post_direccion_salida %>
+    </div>
+    <div>
+        <%= form.label :Direccion_de_llegada %>
+        <%= form.text_field :post_direccion_llegada %>
+    </div>
+    <div>
+        <%= form.label :Hora_del_turno %>
+        <%= form.time_field :post_hora %>
+    </div>
+    <div>
+        <%= form.label :Limite_de_personas %>
+        <%= form.number_field :post_limit_personas, min: 0, max: 7%>
+    </div>
+    <div>
+        <%= form.label :Fecha_Turno %>
+        <%= form.date_field :post_day, min: Date.today%>
+    </div>
+    <div>
+        <%= form.submit 'Publicar Turno' %>
+    </div>
+    <br>
+    <div>
+    <a class="button is-success is-light" href="<%= publicacions_index_path %>">Volver atrás</a>
+    </div>
+
+<% end %>

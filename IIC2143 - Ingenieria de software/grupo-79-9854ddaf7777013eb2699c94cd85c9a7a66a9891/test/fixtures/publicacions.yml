@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  post_customer_name: MyString
+  post_day: 2022-04-28 11:20:58
+  post_direccion_salida: MyString
+  post_direccion_llegada: MyString
+  post_hora: 2022-04-28 11:20:58
+  post_type: false
+  post_limit_personas: 1
+
+two:
+  post_customer_name: MyString
+  post_day: 2022-04-28 11:20:58
+  post_direccion_salida: MyString
+  post_direccion_llegada: MyString
+  post_hora: 2022-04-28 11:20:58
+  post_type: false
+  post_limit_personas: 1
