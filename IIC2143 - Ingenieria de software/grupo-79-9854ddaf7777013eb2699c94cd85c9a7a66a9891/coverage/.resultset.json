@@ -1,577 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/sebastian.achondo/Desktop/grupo-79/app/controllers/application_controller.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null
-        ]
-      },
-      "/Users/sebastian.achondo/Desktop/grupo-79/app/helpers/messages_helper.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null
-        ]
-      },
-      "/Users/sebastian.achondo/Desktop/grupo-79/app/helpers/rooms_helper.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null
-        ]
-      },
-      "/Users/sebastian.achondo/Desktop/grupo-79/app/helpers/sobre_nosotros_helper.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null
-        ]
-      },
-      "/Users/sebastian.achondo/Desktop/grupo-79/app/models/admin_user.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null,
-          null,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/sebastian.achondo/Desktop/grupo-79/app/models/application_record.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/sebastian.achondo/Desktop/grupo-79/app/admin/admin_users.rb": {
-        "lines": [
-          null,
-          null,
-          null,
-          1,
-          1,
-          null,
-          1,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/sebastian.achondo/Desktop/grupo-79/app/admin/dashboard.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          null,
-          1,
-          0,
-          0,
-          0,
-          0,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/sebastian.achondo/Desktop/grupo-79/app/admin/publicacions.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/sebastian.achondo/Desktop/grupo-79/app/models/publicacion.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          0,
-          null,
-          null
-        ]
-      },
-      "/Users/sebastian.achondo/Desktop/grupo-79/app/admin/requests.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/sebastian.achondo/Desktop/grupo-79/app/models/request.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/sebastian.achondo/Desktop/grupo-79/app/admin/resenas.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/sebastian.achondo/Desktop/grupo-79/app/models/resena.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/sebastian.achondo/Desktop/grupo-79/app/admin/users.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/sebastian.achondo/Desktop/grupo-79/app/models/user.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null,
-          null,
-          1,
-          null,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/sebastian.achondo/Desktop/grupo-79/app/models/message.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/sebastian.achondo/Desktop/grupo-79/app/models/room.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null,
-          null,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/sebastian.achondo/Desktop/grupo-79/app/controllers/publicacions_controller.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          2,
-          null,
-          2,
-          2,
-          2,
-          1,
-          null,
-          1,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          1,
-          2,
-          2,
-          null,
-          null,
-          2,
-          1,
-          null,
-          1,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/sebastian.achondo/Desktop/grupo-79/app/controllers/requests_controller.rb": {
-        "lines": [
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          0,
-          null,
-          null,
-          1,
-          2,
-          null,
-          2,
-          2,
-          2,
-          1,
-          null,
-          1,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          2,
-          2,
-          2,
-          2,
-          null,
-          null,
-          2,
-          2,
-          null,
-          0,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/sebastian.achondo/Desktop/grupo-79/app/controllers/resenas_controller.rb": {
-        "lines": [
-          null,
-          null,
-          null,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          0,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          1,
-          2,
-          2,
-          2,
-          1,
-          null,
-          1,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          1,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/sebastian.achondo/Desktop/grupo-79/app/controllers/rooms_controller.rb": {
-        "lines": [
-          null,
-          null,
-          null,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          1,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/sebastian.achondo/Desktop/grupo-79/app/controllers/controllers_controller.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/sebastian.achondo/Desktop/grupo-79/app/controllers/users_controller.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/sebastian.achondo/Desktop/grupo-79/app/mailers/application_mailer.rb": {
+      "/Users/sebastian.achondo/Desktop/crispy-broccoli/IIC2143 - Ingenieria de software/grupo-79-9854ddaf7777013eb2699c94cd85c9a7a66a9891/app/mailers/application_mailer.rb": {
         "lines": [
           null,
           null,
@@ -583,7 +13,339 @@
         "branches": {
         }
       },
-      "/Users/sebastian.achondo/Desktop/grupo-79/app/jobs/application_job.rb": {
+      "/Users/sebastian.achondo/Desktop/crispy-broccoli/IIC2143 - Ingenieria de software/grupo-79-9854ddaf7777013eb2699c94cd85c9a7a66a9891/app/admin/requests.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/sebastian.achondo/Desktop/crispy-broccoli/IIC2143 - Ingenieria de software/grupo-79-9854ddaf7777013eb2699c94cd85c9a7a66a9891/app/admin/dashboard.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/sebastian.achondo/Desktop/crispy-broccoli/IIC2143 - Ingenieria de software/grupo-79-9854ddaf7777013eb2699c94cd85c9a7a66a9891/app/admin/publicacions.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/sebastian.achondo/Desktop/crispy-broccoli/IIC2143 - Ingenieria de software/grupo-79-9854ddaf7777013eb2699c94cd85c9a7a66a9891/app/admin/resenas.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/sebastian.achondo/Desktop/crispy-broccoli/IIC2143 - Ingenieria de software/grupo-79-9854ddaf7777013eb2699c94cd85c9a7a66a9891/app/admin/admin_users.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null
+        ],
+        "branches": {
+        }
+      },
+      "/Users/sebastian.achondo/Desktop/crispy-broccoli/IIC2143 - Ingenieria de software/grupo-79-9854ddaf7777013eb2699c94cd85c9a7a66a9891/app/admin/users.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/sebastian.achondo/Desktop/crispy-broccoli/IIC2143 - Ingenieria de software/grupo-79-9854ddaf7777013eb2699c94cd85c9a7a66a9891/app/models/room.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          0,
+          null,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null
+        ],
+        "branches": {
+        }
+      },
+      "/Users/sebastian.achondo/Desktop/crispy-broccoli/IIC2143 - Ingenieria de software/grupo-79-9854ddaf7777013eb2699c94cd85c9a7a66a9891/app/models/resena.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/sebastian.achondo/Desktop/crispy-broccoli/IIC2143 - Ingenieria de software/grupo-79-9854ddaf7777013eb2699c94cd85c9a7a66a9891/app/models/message.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/sebastian.achondo/Desktop/crispy-broccoli/IIC2143 - Ingenieria de software/grupo-79-9854ddaf7777013eb2699c94cd85c9a7a66a9891/app/models/request.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/sebastian.achondo/Desktop/crispy-broccoli/IIC2143 - Ingenieria de software/grupo-79-9854ddaf7777013eb2699c94cd85c9a7a66a9891/app/models/publicacion.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null
+        ],
+        "branches": {
+        }
+      },
+      "/Users/sebastian.achondo/Desktop/crispy-broccoli/IIC2143 - Ingenieria de software/grupo-79-9854ddaf7777013eb2699c94cd85c9a7a66a9891/app/models/admin_user.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/sebastian.achondo/Desktop/crispy-broccoli/IIC2143 - Ingenieria de software/grupo-79-9854ddaf7777013eb2699c94cd85c9a7a66a9891/app/models/application_record.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/sebastian.achondo/Desktop/crispy-broccoli/IIC2143 - Ingenieria de software/grupo-79-9854ddaf7777013eb2699c94cd85c9a7a66a9891/app/models/user.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null
+        ],
+        "branches": {
+        }
+      },
+      "/Users/sebastian.achondo/Desktop/crispy-broccoli/IIC2143 - Ingenieria de software/grupo-79-9854ddaf7777013eb2699c94cd85c9a7a66a9891/app/jobs/application_job.rb": {
         "lines": [
           null,
           null,
@@ -598,12 +360,11 @@
         "branches": {
         }
       },
-      "/Users/sebastian.achondo/Desktop/grupo-79/app/controllers/messages_controller.rb": {
+      "/Users/sebastian.achondo/Desktop/crispy-broccoli/IIC2143 - Ingenieria de software/grupo-79-9854ddaf7777013eb2699c94cd85c9a7a66a9891/app/controllers/messages_controller.rb": {
         "lines": [
           null,
           null,
           0,
-          null,
           null,
           0,
           0,
@@ -618,7 +379,79 @@
         "branches": {
         }
       },
-      "/Users/sebastian.achondo/Desktop/grupo-79/app/controllers/sobre_nosotros_controller.rb": {
+      "/Users/sebastian.achondo/Desktop/crispy-broccoli/IIC2143 - Ingenieria de software/grupo-79-9854ddaf7777013eb2699c94cd85c9a7a66a9891/app/controllers/requests_controller.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null
+        ],
+        "branches": {
+        }
+      },
+      "/Users/sebastian.achondo/Desktop/crispy-broccoli/IIC2143 - Ingenieria de software/grupo-79-9854ddaf7777013eb2699c94cd85c9a7a66a9891/app/controllers/application_controller.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/sebastian.achondo/Desktop/crispy-broccoli/IIC2143 - Ingenieria de software/grupo-79-9854ddaf7777013eb2699c94cd85c9a7a66a9891/app/controllers/sobre_nosotros_controller.rb": {
         "lines": [
           null,
           null,
@@ -629,7 +462,153 @@
         "branches": {
         }
       },
-      "/Users/sebastian.achondo/Desktop/grupo-79/app/controllers/users/omniauth_callbacks_controller.rb": {
+      "/Users/sebastian.achondo/Desktop/crispy-broccoli/IIC2143 - Ingenieria de software/grupo-79-9854ddaf7777013eb2699c94cd85c9a7a66a9891/app/controllers/resenas_controller.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null
+        ],
+        "branches": {
+        }
+      },
+      "/Users/sebastian.achondo/Desktop/crispy-broccoli/IIC2143 - Ingenieria de software/grupo-79-9854ddaf7777013eb2699c94cd85c9a7a66a9891/app/controllers/rooms_controller.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null
+        ],
+        "branches": {
+        }
+      },
+      "/Users/sebastian.achondo/Desktop/crispy-broccoli/IIC2143 - Ingenieria de software/grupo-79-9854ddaf7777013eb2699c94cd85c9a7a66a9891/app/controllers/controllers_controller.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/sebastian.achondo/Desktop/crispy-broccoli/IIC2143 - Ingenieria de software/grupo-79-9854ddaf7777013eb2699c94cd85c9a7a66a9891/app/controllers/users_controller.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/sebastian.achondo/Desktop/crispy-broccoli/IIC2143 - Ingenieria de software/grupo-79-9854ddaf7777013eb2699c94cd85c9a7a66a9891/app/controllers/users/omniauth_callbacks_controller.rb": {
         "lines": [
           null,
           null,
@@ -667,7 +646,7 @@
         "branches": {
         }
       },
-      "/Users/sebastian.achondo/Desktop/grupo-79/app/controllers/users/passwords_controller.rb": {
+      "/Users/sebastian.achondo/Desktop/crispy-broccoli/IIC2143 - Ingenieria de software/grupo-79-9854ddaf7777013eb2699c94cd85c9a7a66a9891/app/controllers/users/passwords_controller.rb": {
         "lines": [
           null,
           null,
@@ -709,7 +688,7 @@
         "branches": {
         }
       },
-      "/Users/sebastian.achondo/Desktop/grupo-79/app/controllers/users/sessions_controller.rb": {
+      "/Users/sebastian.achondo/Desktop/crispy-broccoli/IIC2143 - Ingenieria de software/grupo-79-9854ddaf7777013eb2699c94cd85c9a7a66a9891/app/controllers/users/sessions_controller.rb": {
         "lines": [
           null,
           null,
@@ -744,7 +723,7 @@
         "branches": {
         }
       },
-      "/Users/sebastian.achondo/Desktop/grupo-79/app/controllers/users/confirmations_controller.rb": {
+      "/Users/sebastian.achondo/Desktop/crispy-broccoli/IIC2143 - Ingenieria de software/grupo-79-9854ddaf7777013eb2699c94cd85c9a7a66a9891/app/controllers/users/confirmations_controller.rb": {
         "lines": [
           null,
           null,
@@ -782,57 +761,13 @@
         "branches": {
         }
       },
-      "/Users/sebastian.achondo/Desktop/grupo-79/app/controllers/users/registrations_controller.rb": {
+      "/Users/sebastian.achondo/Desktop/crispy-broccoli/IIC2143 - Ingenieria de software/grupo-79-9854ddaf7777013eb2699c94cd85c9a7a66a9891/app/controllers/users/registrations_controller.rb": {
         "lines": [
           null,
           null,
-          0,
-          0,
-          0,
-          0,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
           null,
           null,
           0,
-          0,
-          0,
-          null,
-          null,
           0,
           0,
           0,
@@ -844,6 +779,131 @@
           null,
           null,
           null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          0,
+          0,
+          null,
+          null
+        ],
+        "branches": {
+        }
+      },
+      "/Users/sebastian.achondo/Desktop/crispy-broccoli/IIC2143 - Ingenieria de software/grupo-79-9854ddaf7777013eb2699c94cd85c9a7a66a9891/app/controllers/publicacions_controller.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null
+        ],
+        "branches": {
+        }
+      },
+      "/Users/sebastian.achondo/Desktop/crispy-broccoli/IIC2143 - Ingenieria de software/grupo-79-9854ddaf7777013eb2699c94cd85c9a7a66a9891/app/helpers/messages_helper.rb": {
+        "lines": [
           null,
           null,
           0,
@@ -852,7 +912,27 @@
         "branches": {
         }
       },
-      "/Users/sebastian.achondo/Desktop/grupo-79/app/channels/application_cable/connection.rb": {
+      "/Users/sebastian.achondo/Desktop/crispy-broccoli/IIC2143 - Ingenieria de software/grupo-79-9854ddaf7777013eb2699c94cd85c9a7a66a9891/app/helpers/sobre_nosotros_helper.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/sebastian.achondo/Desktop/crispy-broccoli/IIC2143 - Ingenieria de software/grupo-79-9854ddaf7777013eb2699c94cd85c9a7a66a9891/app/helpers/rooms_helper.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/sebastian.achondo/Desktop/crispy-broccoli/IIC2143 - Ingenieria de software/grupo-79-9854ddaf7777013eb2699c94cd85c9a7a66a9891/app/channels/application_cable/connection.rb": {
         "lines": [
           null,
           null,
@@ -864,7 +944,7 @@
         "branches": {
         }
       },
-      "/Users/sebastian.achondo/Desktop/grupo-79/app/channels/application_cable/channel.rb": {
+      "/Users/sebastian.achondo/Desktop/crispy-broccoli/IIC2143 - Ingenieria de software/grupo-79-9854ddaf7777013eb2699c94cd85c9a7a66a9891/app/channels/application_cable/channel.rb": {
         "lines": [
           null,
           null,
@@ -877,6 +957,6 @@
         }
       }
     },
-    "timestamp": 1655089047
+    "timestamp": 1689648202
   }
 }
