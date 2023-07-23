@@ -19,6 +19,7 @@ class ArticlesController < ApplicationController
     def create #para guardar un nuevo articulo
         # render plain: params[:article].inspect #para mostrar en pantalla los parametros que se envian desde el formulario
         @article = Article.new(params.require(:article).permit(:title, :description)) #se crea un nuevo articulo con los parametros que se envian desde el formulario
+        @article.user = User.first #se asigna el usuario que creo el articulo
         if @article.save #se guarda el articulo
             flash[:notice] = "Article was created successfully" #se crea un mensaje de exito
             redirect_to @article #se redirecciona a la pagina de articulos para ver los detalles del articulo creado

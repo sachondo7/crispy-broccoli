@@ -3,5 +3,7 @@ Rails.application.routes.draw do
   root "pages#home"
   get '/about', to: 'pages#about'
   resources :articles #esto crea todas las rutas para articles
+  get 'signup', to: 'users#new' #ruta para crear un nuevo usuario
+  resources :users 
 
 end
