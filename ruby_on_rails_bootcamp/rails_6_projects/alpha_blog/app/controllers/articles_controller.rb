@@ -5,7 +5,8 @@ class ArticlesController < ApplicationController
     end
 
     def index #para mostrar todos los articulos
-        @articles = Article.all
+        #@articles = Article.all #se buscan todos los articulos
+        @articles = Article.paginate(page: params[:page], per_page: 5) #se buscan todos los articulos y se muestran de 5 en 5
     end
 
     def new #para crear un nuevo articulo
