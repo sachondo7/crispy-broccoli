@@ -5,5 +5,7 @@ Rails.application.routes.draw do
   resources :articles #esto crea todas las rutas para articles
   get 'signup', to: 'users#new' #ruta para crear un nuevo usuario
   resources :users 
-
+  get 'login', to: 'sessions#new' #ruta para crear una nueva sesion
+  post '/login', to: 'sessions#create'
+  delete '/logout', to: 'sessions#destroy'
 end
