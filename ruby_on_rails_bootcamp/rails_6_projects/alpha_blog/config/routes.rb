@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   get 'login', to: 'sessions#new' #ruta para crear una nueva sesion
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
+  resources :categories, except: [:destroy] #esto crea todas las rutas para categories excepto la de eliminar
 end
