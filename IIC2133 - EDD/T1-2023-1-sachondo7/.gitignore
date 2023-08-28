@@ -1,0 +1,9 @@
+obj/
+*.o
+*.txt
+test_quicksort
+test_bstmate
+test_kdtree
+pruebas_cars
+pruebas_P1
+pruebas_P3
