@@ -1,0 +1,5 @@
+tests/
+solutions/
+run_tests.sh
+obj/
+*.txt

@@ -1,0 +1,26 @@
+{
+    // Generic C debug file for PUC IIC2133 For MacOS with CLang
+    // by Carlos Paredes
+    "version": "0.0.0",
+    "configurations": [
+      {
+        "name": "CLang - Debug Executable",
+        "type": "cppdbg",
+        "request": "launch",
+        "program": "${workspaceFolder}/dccars",
+        "args": ["${workspaceFolder}/input.txt", "${workspaceFolder}/output.txt"],
+        "stopAtEntry": true,
+        "cwd": "${workspaceFolder}",
+        "environment": [],
+        "externalConsole": false,
+        "setupCommands": [
+            {
+                "description": "Enable pretty-printing for gdb",
+                "text": "-enable-pretty-printing",
+                "ignoreFailures": true
+            }
+        ],
+        "MIMode": "lldb",
+      }
+    ]
+  }
