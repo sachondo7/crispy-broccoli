@@ -1,0 +1,75 @@
+name: CI
+
+on:
+  pull_request:
+    branches:
+      - master  
+
+jobs:
+  rubocop:
+    name: Run RuboCop
+    runs-on: ubuntu-latest  
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 3.1.3 
+    
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 16
+
+    - name: Install dependencies
+      run: |
+        cd T3/Codigo\ T3
+        bundle install
+
+    - name: Run RuboCop
+      run: |
+        cd T3/Codigo\ T3
+        bundle exec rubocop
+
+  TESTS:
+    name: Run TESTS
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 3.1.3
+        
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 16
+
+    - name: Install dependencies
+      run: |
+        cd T3/Codigo\ T3
+        bundle install
+
+    - name: Run TESTS
+      run: |
+        cd T3/Codigo\ T3
+        rails test
+
+    - name: Save test coverage
+      if: ${{ success() }}
+      run: mv T3/Codigo\ T3/coverage ${{ runner.workspace }}/T3/Codigo\ T3/coverage
+      continue-on-error: true
+
+    - name: Upload test coverage
+      if: ${{ success() }}
+      uses: actions/upload-artifact@v2
+      with:
+        name: coverage
+        path: ${{ runner.workspace }}/T3/Codigo\ T3/coverage
