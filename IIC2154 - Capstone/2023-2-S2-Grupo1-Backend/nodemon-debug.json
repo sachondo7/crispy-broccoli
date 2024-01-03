@@ -1,0 +1,10 @@
+{
+  "ignore": [".git", "node_modules/**/node_modules"],
+  "verbose": true,
+  "ext": "ts",
+  "exec": "node -r ts-node/register --inspect=0.0.0.0:9333 src/index.ts",
+  "watch": ["src/**/*.ts"],
+  "env": {
+    "NODE_ENV": "development"
+  }
+}

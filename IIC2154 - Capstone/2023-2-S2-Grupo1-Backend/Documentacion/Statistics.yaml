@@ -1,0 +1,87 @@
+openapi: 3.0.0
+info:
+  title: API Endpoint Documentation for Quotes Statistics
+  version: 1.0.0
+paths:
+  /api/statistics:
+    get:
+      summary: Retrieve Statistics
+      parameters:
+        - name: clientId
+          in: query
+          description: Filter by client ID(s).
+          schema:
+            type: array
+            items:
+              type: string
+        - name: userId
+          in: query
+          description: Filter by user ID(s).
+          schema:
+            type: array
+            items:
+              type: string
+        - name: serviceId
+          in: query
+          description: Filter by service ID(s).
+          schema:
+            type: array
+            items:
+              type: string
+        - name: startDate
+          in: query
+          description: Filter by start date (ISO 8601 format).
+          schema:
+            type: string
+            format: date-time
+        - name: endDate
+          in: query
+          description: Filter by end date (ISO 8601 format).
+          schema:
+            type: string
+            format: date-time
+      responses:
+        200:
+          description: Statistics retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Statistics'
+        500:
+          description: An error occurred while retrieving statistics.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseBody'
+
+components:
+  schemas:
+    Statistics:
+      type: object
+      properties:
+        enviada:
+          type: integer
+        enviadaUF:
+          type: number
+        adjudicado:
+          type: integer
+        adjudicadoUF:
+          type: number
+        perdido:
+          type: integer
+        perdidoUF:
+          type: number
+        emitida:
+          type: integer
+        emitidaUF:
+          type: number
+        negociada:
+          type: integer
+        negociadaUF:
+          type: number
+
+    ErrorResponseBody:
+      type: object
+      properties:
+        error:
+          type: string

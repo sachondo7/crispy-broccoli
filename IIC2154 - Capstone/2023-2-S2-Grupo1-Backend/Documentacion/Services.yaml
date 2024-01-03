@@ -1,0 +1,41 @@
+openapi: 3.0.0
+info:
+  title: API Endpoint Documentation for services routes
+  version: 1.0.0
+paths:
+    /api/services/{clientId}:
+    get:
+      summary: Get all services
+      parameters:
+        - name: clientId
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    type:
+                      type: string
+        '500':
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseBody'
+components:
+  schemas:
+    ErrorResponseBody:
+      type: object
+      properties:
+        error:
+          type: string

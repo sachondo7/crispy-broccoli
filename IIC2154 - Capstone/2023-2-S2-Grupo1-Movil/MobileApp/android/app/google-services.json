@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "221788687219",
+    "project_id": "trebolit-notificaciones",
+    "storage_bucket": "trebolit-notificaciones.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:221788687219:android:edebd8610b8fa6305ad306",
+        "android_client_info": {
+          "package_name": "com.mobileapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDuhpLjPHk_xBbpBN2LwQd1vrwdTgubnY4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:221788687219:android:440bd910b117851f5ad306",
+        "android_client_info": {
+          "package_name": "com.notificationsapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDuhpLjPHk_xBbpBN2LwQd1vrwdTgubnY4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

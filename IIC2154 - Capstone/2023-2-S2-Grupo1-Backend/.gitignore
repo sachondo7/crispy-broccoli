@@ -1,0 +1,18 @@
+# IDE
+.idea/
+.vscode/
+
+# MacOS
+*.DS_STORE
+.AppleDouble
+.LSOverride
+
+# Dependencies
+node_modules/
+build/
+tmp/
+temp/
+
+.env
+
+serviceAccountKey.json

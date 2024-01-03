@@ -1,0 +1,300 @@
+openapi: 3.0.0
+info:
+  title: API Documentation
+  version: 1.0.0
+paths:
+  /api/tariffs:
+    post:
+      summary: Create a Tariff
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateTariffRequestBody'
+      responses:
+        '201':
+          description: Tariff created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Quote'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseBody'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseBody'
+  get:
+      summary: Get All Tariffs
+      responses:
+        '200':
+          description: Tariffs retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Quote'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseBody'
+
+  /api/tariffs/{id}:
+    get:
+      summary: Get a Tariff by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Tariff found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Quote'
+        '404':
+          description: Tariff not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseBody'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseBody'
+    put:
+      summary: Update a Tariff by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        description: Updated Tariff data
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateTariffRequestBody'
+      responses:
+        '200':
+          description: Tariff updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Quote'
+        '404':
+          description: Tariff not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseBody'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseBody'
+    delete:
+      summary: Delete a Tariff by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '204':
+          description: Tariff deleted successfully
+        '404':
+          description: Tariff not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseBody'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseBody'
+
+  /api/tariffs/updatePrice/{id}:
+    get:
+      summary: Update Tariff Price
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Tariff price updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Quote'
+        '404':
+          description: Tariff not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseBody'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseBody'
+components:
+  schemas:
+    CreateTariffRequestBody:
+      type: object
+      properties:
+        currency:
+          type: string
+        priceWithDeduction:
+          type: number
+        grossPrice:
+          type: number
+        quoteId:
+          type: integer
+        projectDuration:
+          type: number
+        risk:
+          type: string
+        otherCosts:
+          type: number
+        serviceId:
+          type: integer
+    ErrorResponseBody:
+      type: object
+      properties:
+        error:
+          type: string
+    Quote:
+      type: object
+      properties:
+        currency:
+          type: string
+        startDate: 
+          type: date
+        endDate:
+          type: date 
+        deliveryDate: 
+          type: date
+        status: 
+          type: string
+        idProyecto: 
+          type: string
+        id:
+          type: integer
+        userId:
+          type: object
+          properties:
+            name:
+              type: string
+            email:
+              type: string
+            passwordHash:
+              type: string
+            id:
+              type: integer
+            blocked:
+              type: boolean
+            type:
+              type: string
+        clientId:
+          type: object
+          properties:
+            name: 
+              type: string
+            rut_empresa: 
+              type: string
+            id: 
+              type: integer
+        contactId:
+          type: object
+          properties:
+            name:
+              type: string
+            email:
+              type: string
+            id:
+              type: integer
+        tariffId:
+          type: object
+          properties:
+            currency:
+              type: string
+            priceWhitDeduction:
+              type: number
+            grossPrice:
+              type: number
+            proyectDuration:
+              type: number
+            risk:
+              type: number
+            otherCosts:
+              type: number
+            id:
+              type: integer
+            deductions:
+              type: array
+              items:
+                type: object
+                properties:
+                  authorization:
+                    type: boolean
+                  percentage:
+                    type: number
+                  id:
+                    type: integer
+            profiles:
+              type: array
+              items:
+                type: object
+                properties:
+                  role:
+                    type: string
+                  costperhour:
+                    type: number
+                  hourAssignment:
+                    type: number
+                  id:
+                    type: integer
+            serviceId:
+              type: object
+              properties:
+                type:
+                  type: string
+                id:
+                  type: integer
+            tecnologies:
+              type: array
+              properties:
+                type:
+                  type: string
+                value:
+                  type: integer
+                quantity:
+                  type: integer
+                id:
+                  type: integer

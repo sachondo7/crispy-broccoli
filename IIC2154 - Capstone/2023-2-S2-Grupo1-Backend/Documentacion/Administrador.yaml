@@ -1,0 +1,474 @@
+openapi: 3.0.0
+info:
+  title: API Endpoint Documentation for Administrator in the API
+  version: 1.0.0
+paths:
+  /admin/create_user/{userId}:
+    post:
+      summary: Create a user
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateUserRequestBody'
+      responses:
+        '201':
+          description: User created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+  /admin/edit_deductions/{userId}/{id}:
+    post:
+      summary: Edit Deductions
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          schema:
+            type: integer
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateDeductionAuthorizationRequestBody'
+      responses:
+        '200':
+          description: Deduction updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Quote'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseBody'
+        '404':
+          description: Deduction not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseBody'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseBody'
+
+  /admin/block_user/{userId}/{id}:
+    put:
+      summary: Block User
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          schema:
+            type: integer
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: User blocked
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '404':
+          description: User not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseBody'
+        '409':
+          description: User already blocked
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseBody'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseBody'
+
+  /admin/unblock_user/{userId}/{id}:
+    put:
+      summary: Unblock User
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          schema:
+            type: integer
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: User unblocked
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '404':
+          description: User not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseBody'
+        '409':
+          description: User already unblocked
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseBody'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseBody'
+  /admin/eliminate_user/{userId}/{id}:
+    delete:
+      summary: Delete a user
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          description: User ID
+          schema:
+            type: integer
+        - name: id
+          in: path
+          required: true
+          description: User ID
+          schema:
+            type: integer
+      responses:
+        '204':
+          description: The user has been deleted
+        '404':
+          description: User not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseBody'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseBody'
+  /admin/accept_discounts/{userId}:
+    get:
+      summary: Get quotes to accept deductions
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          description: User ID
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Quotes obtained successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Quote'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseBody'
+
+  /admin/reassign_quotes_user/{userId}:
+    post:
+      summary: Reassign user to a quote
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          description: User ID
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateUserQuoteRequestBody'
+      responses:
+        '200':
+          description: User in the quote updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Quote'
+        '404':
+          description: Quote not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseBody'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseBody'
+
+  /admin/quotes_to_reassign/{userId}:
+    get:
+      summary: Get quotes to reassign
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          description: User ID
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Quotes obtained successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                $ref: '#/components/schemas/Quote'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseBody'
+
+components:
+  schemas:
+    CreateServiceRequestBody:
+      type: object
+      properties:
+        type:
+          type: string
+    CreateClientRequestBody:
+      type: object
+      properties:
+        name:
+          type: string
+        rut_empresa:
+          type: string
+    CreateUserRequestBody:
+      type: object
+      properties:
+        name:
+          type: string
+        email:
+          type: string
+        password:
+          type: string
+        type:
+          type: string
+    CreateContactRequestBody:
+      type: object
+      properties:
+        name:
+          type: string
+        email:
+          type: string
+        clientId:
+          type: integer
+    Service:
+      type: object
+      properties:
+        id:
+          type: integer
+        type:
+          type: string
+    Client:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        rut_empresa:
+          type: string
+        quotes:
+          type: Quote[]
+    User:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        email:
+          type: string
+        deductions:
+          type: Deduction[]
+        quotes:
+          type: Quote[]
+        blocked:
+          type: bool
+        type:
+          type: string
+    Contact:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        email:
+          type: string
+        client:
+          type: Client
+    UpdateDeductionAuthorizationRequestBody:
+      type: object
+      properties:
+        authorization:
+          type: boolean
+        percentage:
+          type: number
+    UpdateUserQuoteRequestBody:
+      type: object
+      properties:
+        userId:
+          type: id
+        quoteId:
+          type: id
+    ErrorResponseBody:
+      type: object
+      properties:
+        error:
+          type: string
+    Quote:
+      type: object
+      properties:
+        currency:
+          type: string
+        startDate: 
+          type: date
+        endDate:
+          type: date 
+        deliveryDate: 
+          type: date
+        status: 
+          type: string
+        idProyecto: 
+          type: string
+        id:
+          type: integer
+        userId:
+          type: object
+          properties:
+            name:
+              type: string
+            email:
+              type: string
+            passwordHash:
+              type: string
+            id:
+              type: integer
+            blocked:
+              type: boolean
+            type:
+              type: string
+        clientId:
+          type: object
+          properties:
+            name: 
+              type: string
+            rut_empresa: 
+              type: string
+            id: 
+              type: integer
+        contactId:
+          type: object
+          properties:
+            name:
+              type: string
+            email:
+              type: string
+            id:
+              type: integer
+        tariffId:
+          type: object
+          properties:
+            currency:
+              type: string
+            priceWhitDeduction:
+              type: number
+            grossPrice:
+              type: number
+            proyectDuration:
+              type: number
+            risk:
+              type: number
+            otherCosts:
+              type: number
+            id:
+              type: integer
+            deductions:
+              type: array
+              items:
+                type: object
+                properties:
+                  authorization:
+                    type: boolean
+                  percentage:
+                    type: number
+                  id:
+                    type: integer
+            profiles:
+              type: array
+              items:
+                type: object
+                properties:
+                  role:
+                    type: string
+                  costperhour:
+                    type: number
+                  hourAssignment:
+                    type: number
+                  id:
+                    type: integer
+            serviceId:
+              type: object
+              properties:
+                type:
+                  type: string
+                id:
+                  type: integer
+            tecnologies:
+              type: array
+              properties:
+                type:
+                  type: string
+                value:
+                  type: integer
+                quantity:
+                  type: integer
+                id:
+                  type: integer

@@ -1,0 +1,93 @@
+openapi: 3.0.0
+info:
+  title: API Endpoint Documentation for Other Routes
+  version: 1.0.0
+paths:
+  /api/risks:
+    get:
+      summary: Get Risk Levels
+      responses:
+        '200':
+          description: Risk levels retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: integer
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseBody'
+  /api/cart:
+    post:
+      summary: Calculate shopping cart costs
+      requestBody:
+        description: ShoppingCart information
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ShoppingCart'
+      responses:
+        '200':
+          description: Successful calculation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CartResult'
+        '500':
+          description: Error while calculating cart
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+components:
+  schemas:
+    ShoppingCart:
+      type: object
+      properties:
+        profiles:
+          type: array
+          propertie:
+            role:
+              type: string
+            percentage:
+              type: integer
+        otherCosts:
+          type: integer
+        risk:
+          type: string
+        proyectDuration:
+          type: integer
+        discountPercentage:
+          type: integer
+        clientId:
+          type: integer
+    CartResult:
+      type: object
+      properties:
+        asignaciones:
+          type: integer
+        riesgo:
+          type: integer
+        mensual:
+          type: integer
+        tarifa:
+          type: integer
+        descuento:
+          type: integer
+        total:
+          type: integer
+    Error:
+      type: object
+      properties:
+        error:
+          type: string
+
+
+
+
+

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyD_ZvtH1otyHnvXx6B3GoM7s5cBH1Xynlk</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1059454595501</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>org.reactjs.native.example.MobileApp</string>
+	<key>PROJECT_ID</key>
+	<string>trebol-it-ed5ee</string>
+	<key>STORAGE_BUCKET</key>
+	<string>trebol-it-ed5ee.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1059454595501:ios:d77342157a9dd2626a7124</string>
+</dict>
+</plist>

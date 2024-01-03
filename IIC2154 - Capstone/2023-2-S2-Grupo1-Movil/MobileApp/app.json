@@ -1,0 +1,9 @@
+{
+  "name": "MobileApp",
+  "displayName": "MobileApp",
+  "slug": "mobileapp",
+  "expo": {
+    "name": "MobileApp",
+    "slug": "mobileapp"
+  }
+}

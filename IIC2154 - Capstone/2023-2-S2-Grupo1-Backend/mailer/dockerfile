@@ -1,0 +1,24 @@
+# We use alpine for a lightweight (less memory) image
+FROM node:16-alpine
+
+# Create app directory
+WORKDIR /app/mailer
+
+# Copy the files that declares the dependencies (in this case using npm)
+COPY package.json ./
+COPY package-lock.json ./
+
+# Check if all the files are correct when building
+RUN ls -a
+
+# Install the dependencies
+RUN npm install --global nodemon
+RUN npm install
+
+# Copy all the files into the container to run the app
+COPY . .
+# Run command to start the process runing a shell command using node
+CMD ["npm", "start" ]
+
+# This is for documentation only, the port muyst be exposed manually or in compose definition.
+EXPOSE 8000

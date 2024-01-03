@@ -1,0 +1,489 @@
+openapi: 3.0.0
+info:
+  title: API Endpoint Documentation for quotes in the API
+  version: 1.0.0
+paths:
+  /api/quotes/create:
+    post:
+      summary: Create a new quote
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateQuoteRequestBody'
+      responses:
+        '201':
+          description: Quote created successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  quoteId:
+                    type: integer
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseBody'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseBody'
+  /api/quotes/{id}:
+    get:
+      summary: Get a quote by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Quote found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Quote'
+        '404':
+          description: Quote not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseBody'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseBody'
+    put:
+      summary: Update a quote by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateQuoteRequestBody'
+      responses:
+        '200':
+          description: Quote updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Quote'
+        '404':
+          description: Quote not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseBody'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseBody'
+    delete:
+      summary: Delete a quote by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '204':
+          description: Quote deleted successfully
+        '404':
+          description: Quote not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseBody'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseBody'
+  /api/quotes:
+    get:
+      summary: Get all quotes
+      responses:
+        '200':
+          description: Quotes found
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Quote'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseBody'
+    post:
+      summary: Create a new quote with related entities
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NewQuoteRequestBody'
+      responses:
+        '201':
+          description: Quote created successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  quoteId:
+                    type: integer
+                  tariffId:
+                    type: integer
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseBody'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseBody'
+  /api/quotes/filters/{user_id}:
+    post:
+      summary: Filter quotes by user and criteria
+      parameters:
+        - name: user_id
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: The user's ID
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FiltersData'
+      responses:
+        '200':
+          description: Quotes filtered successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Quotes'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseBody'
+    /api/quotes/searchHistory/{user_id}:
+    get:
+      summary: Retrieve quotes search history for a user
+      parameters:
+        - name: user_id
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: The user's ID
+      responses:
+        '200':
+          description: Quotes search history retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Quote'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseBody'
+  /api/quotes/expire/{userId}/{days}:
+    get:
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: The user ID
+        - name: days
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: The number of days
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Quote'
+        '404':
+          description: Quotes not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseBody'
+  /api/quotes/update/{id}:
+    post:
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: The quote ID
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NewQuoteRequestBody'
+      responses:
+        '200':
+          description: Quote updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Quote'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseBody'
+        '404':
+          description: Quote not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseBody'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseBody'
+
+components:
+  schemas:
+    FiltersData:
+      type: object
+      properties:
+        userId:
+          type: integer
+        filters:
+          type: object
+          properties:
+            clientId:
+              type: integer
+            idProyecto:
+              type: string
+    ErrorResponseBody:
+      type: object
+      properties:
+        error:
+          type: string
+    Quote:
+      type: object
+      properties:
+        currency:
+          type: string
+        startDate: 
+          type: date
+        endDate:
+          type: date 
+        deliveryDate: 
+          type: date
+        status: 
+          type: string
+        idProyecto: 
+          type: string
+        id:
+          type: integer
+        userId:
+          type: object
+          properties:
+            name:
+              type: string
+            email:
+              type: string
+            passwordHash:
+              type: string
+            id:
+              type: integer
+            blocked:
+              type: boolean
+            type:
+              type: string
+        clientId:
+          type: object
+          properties:
+            name: 
+              type: string
+            rut_empresa: 
+              type: string
+            id: 
+              type: integer
+        contactId:
+          type: object
+          properties:
+            name:
+              type: string
+            email:
+              type: string
+            id:
+              type: integer
+        tariffId:
+          type: object
+          properties:
+            currency:
+              type: string
+            priceWhitDeduction:
+              type: number
+            grossPrice:
+              type: number
+            proyectDuration:
+              type: number
+            risk:
+              type: number
+            otherCosts:
+              type: number
+            id:
+              type: integer
+            deductions:
+              type: array
+              items:
+                type: object
+                properties:
+                  authorization:
+                    type: boolean
+                  percentage:
+                    type: number
+                  id:
+                    type: integer
+            profiles:
+              type: array
+              items:
+                type: object
+                properties:
+                  role:
+                    type: string
+                  costperhour:
+                    type: number
+                  hourAssignment:
+                    type: number
+                  id:
+                    type: integer
+            serviceId:
+              type: object
+              properties:
+                type:
+                  type: string
+                id:
+                  type: integer
+            tecnologies:
+              type: array
+              properties:
+                type:
+                  type: string
+                value:
+                  type: integer
+                quantity:
+                  type: integer
+                id:
+                  type: integer
+    NewQuoteRequestBody:
+      type: object
+      properties:
+        clientId:
+          type: integer
+        contactId:
+          type: integer
+        idProyecto:
+          type: string
+        risk:
+          type: string
+        perfiles:
+          type: array
+          items:
+            type: array
+            items:
+              - type: string
+              - type: number
+        adicionales:
+          type: array
+          items:
+            type: array
+            items:
+              - type: string
+              - type: number
+        porcentajeDescuento:
+          type: number
+        proyectDuration:
+          type: integer
+        userId:
+          type: integer
+        currency:
+          type: string
+        service:
+          type: integer
+        otherCosts:
+          type: number
+        endDate:
+          type: string
+          format: date
+        deliveryDate:
+          type: string
+          format: date
+        status:
+          type: string
+  CreateQuoteRequestBody:
+      type: object
+      properties:
+        endDate:
+          type: string
+          format: date
+        deliveryDate:
+          type: string
+          format: date
+        status:
+          type: string
+        idProyecto:
+          type: string
+        userId:
+          type: integer
+        clientId:
+          type: integer
+        contactId:
+          type: integer

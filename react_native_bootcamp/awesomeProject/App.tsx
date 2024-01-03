@@ -7,27 +7,18 @@
 
 import React, {useState} from 'react';
 import {Text, SafeAreaView, View} from 'react-native';
-import HelloWorld from './components/HelloWorld/HelloWorld';
-import Item from './components/Item/Item';
-import HeaderFooter from './components/HeaderFooter/HeaderFooter';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
 
 const App = () => {
   const [name, setName] = useState('hola mundito');
   return (
     <SafeAreaView>
-      <View>
-        <HeaderFooter />
+      <View style ={{flex: 1}}>
+        <Header/>
+        <Text>Aplicación mobile</Text>
+        <Footer/>
       </View>
-      <View style = {{backgroundColor: 'lightblue'}}>
-        <Text onPress={() => setName("Chao mundo")}>{name}</Text>
-      </View>
-      <View style = {{backgroundColor: 'lightgrey'}}>
-        <HelloWorld />
-      </View>
-      <View style = {{backgroundColor: 'magenta'}}>
-        <Text>THIS IS MY FOOTER</Text>
-      </View>
-      <Item name= {'hola'} price = {200} />
     </SafeAreaView>
   );
 };

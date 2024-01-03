@@ -1,0 +1,31 @@
+openapi: 3.0.0
+info:
+  title: API Endpoint Documentation for Report routes
+  description: API for generating reports.
+  version: 1.0.0
+paths:
+  /api/getReport:
+    get:
+      summary: Generate a Report
+      responses:
+        200:
+          description: Report generated successfully.
+          content:
+            application/vnd.openxmlformats-officedocument.spreadsheetml.sheet:
+              schema:
+                type: string
+                format: binary
+        500:
+          description: An error occurred while generating the report.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseBody'
+
+components:
+  schemas:
+    ErrorResponseBody:
+      type: object
+      properties:
+        error:
+          type: string

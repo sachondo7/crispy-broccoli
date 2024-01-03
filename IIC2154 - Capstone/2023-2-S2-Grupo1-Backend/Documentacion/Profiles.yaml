@@ -1,0 +1,85 @@
+openapi: 3.0.0
+info:
+  title: API Endpoint Documentation for Other Profiles
+  version: 1.0.0
+paths:
+  /api/profiles/{clientId}:
+    get:
+      summary: Get hardcoded profiles
+      parameters:
+        - name: clientId
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    role:
+                      type: string
+                    costpermonth:
+                      type: number
+                    hourAssignment:
+                      type: integer
+    post:
+      summary: Create a profile
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                role:
+                  type: string
+                costperhour:
+                  type: number
+                hourAssignment:
+                  type: integer
+                tariffId:
+                  type: number
+      responses:
+        '201':
+          description: Profile created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  role:
+                    type: string
+                  costperhour:
+                    type: number
+                  hourAssignment:
+                    type: integer
+                  tariffId:
+                    type: integer
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseBody'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseBody'
+components:
+  schemas:
+    ErrorResponseBody:
+      type: object
+      properties:
+        error:
+          type: string

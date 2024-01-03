@@ -1,0 +1,37 @@
+openapi: 3.0.0
+info:
+  title: API Endpoint Documentation for Client Route
+  version: 1.0.0
+paths:
+/api/clients:
+  get:
+    summary: Get all clients
+    responses:
+      '200':
+        description: Clients found
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                  rut_empresa:
+                    type: string
+      '500':
+        description: Internal Server Error
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ErrorResponseBody'
+components:
+  schemas:
+    ErrorResponseBody:
+      type: object
+      properties:
+        error:
+          type: string

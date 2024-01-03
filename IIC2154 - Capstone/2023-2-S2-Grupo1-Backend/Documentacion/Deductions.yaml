@@ -1,0 +1,174 @@
+openapi: 3.0.0
+info:
+  title: API Endpoint Documentation for Deduction Routes
+  description: API for managing deductions
+  version: 1.0.0
+
+paths:
+  /api/deduction:
+    post:
+      summary: Create a new deduction
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateDeductionRequestBody'
+      responses:
+        '201':
+          description: Deduction created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeductionResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseBody'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseBody'
+    put:
+      summary: Update a deduction by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                // Properties for updating the deduction
+      responses:
+        '200':
+          description: Deduction data updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeductionResponse'
+        '404':
+          description: Deduction not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseBody'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseBody'
+
+components:
+  schemas:
+    CreateDeductionRequestBody:
+      type: object
+      properties:
+        authorization:
+          type: boolean
+        percentage:
+          type: number
+        userId:
+          type: integer
+        tariffId:
+          type: integer
+    ErrorResponseBody:
+      type: object
+      properties:
+        error:
+          type: string
+    DeductionResponse:
+      type: object
+      properties:
+        authorization:
+          type: boolean
+        percentage:
+          type: number
+        id:
+          type: integer
+        tariffId:
+          type: object
+          properties:
+            currency:
+              type: string
+            priceWhitDeduction:
+              type: number
+            grossPrice:
+              type: number
+            proyectDuration:
+              type: integer
+            risk:
+              type: integer
+            otherCosts:
+              type: number
+            id:
+              type: integer
+            deductions:
+              type: array
+              items:
+                type: object
+                properties:
+                  authorization:
+                    type: boolean
+                  percentage:
+                    type: number
+                  id:
+                    type: integer
+            profiles:
+              type: array
+              items:
+                type: object
+                properties:
+                  role:
+                    type: string
+                  costperhour:
+                    type: number
+                  hourAssignment:
+                    type: integer
+                  id:
+                    type: integer
+            serviceId:
+              type: object
+              properties:
+                type:
+                  type: string
+                id:
+                  type: integer
+            tecnologies:
+              type: array
+              items:
+                type: object
+                properties:
+                  type:
+                    type: string
+                  value:
+                    type: number
+                  id:
+                    type: integer
+                  quantity:
+                    type: integer
+        userId:
+          type: object
+          properties:
+            name:
+              type: string
+            email:
+              type: string
+            passwordHash:
+              type: string
+            id:
+              type: integer
+            blocked:
+              type: boolean
+            type:
+              type: string
